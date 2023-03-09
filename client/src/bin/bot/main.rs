@@ -1,4 +1,4 @@
-#[macro_use] extern crate serde;
+#[macro_use] extern crate serde;H
 
 use authc::AuthClient;
 use common::{clock::Clock, comp};
@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use std::{sync::Arc, time::Duration};
 use tokio::runtime::Runtime;
 use tracing::{info, trace, warn};
-use veloren_client::{addr::ConnectionArgs, Client};
+use thp_client::{addr::ConnectionArgs, Client};
 
 mod settings;
 mod tui;
@@ -97,7 +97,7 @@ impl BotClient {
         self.clock.tick();
         for (username, client) in self.bot_clients.iter_mut() {
             trace!(?username, "tick");
-            let _msgs: Result<Vec<veloren_client::Event>, veloren_client::Error> =
+            let _msgs: Result<Vec<thp_client::Event>, thp_client::Error> =
                 client.tick(comp::ControllerInputs::default(), self.clock.dt(), |_| {});
         }
     }

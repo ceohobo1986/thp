@@ -1,14 +1,14 @@
 [package]
-name = "veloren-server-cli"
+name = "thp-server-cli"
 version = "0.14.0"
-authors = ["Joshua Barretto <joshua.s.barretto@gmail.com>"]
+authors = ["Hobonatius Von Street <ceo_hobo@mitmotion.co.za>"]
 edition = "2021"
 
 [package.metadata.nix]
 build = true
 app = true
 longDescription = """
-Veloren is a multiplayer voxel RPG written in Rust.
+The Hobania Project is a multiplayer voxel RPG written in Rust.
 It is inspired by games such as Cube World, Legend of Zelda: Breath of the Wild, Dwarf Fortress and Minecraft.
 
 This package includes the official server CLI.
@@ -25,11 +25,11 @@ plugins = ["server/plugins"]
 hot-reloading = ["server/hot-reloading"]
 
 [dependencies]
-server = { package = "veloren-server", path = "../server", default-features = false, features = ["simd"] }
-common = { package = "veloren-common", path = "../common" }
-common-base = { package = "veloren-common-base", path = "../common/base" }
-common-net = { package = "veloren-common-net", path = "../common/net" }
-common-frontend = { package = "veloren-common-frontend", path = "../common/frontend" }
+server = { package = "thp-server", path = "../server", default-features = false, features = ["simd"] }
+common = { package = "thp-common", path = "../common" }
+common-base = { package = "thp-common-base", path = "../common/base" }
+common-net = { package = "thp-common-net", path = "../common/net" }
+common-frontend = { package = "thp-common-frontend", path = "../common/frontend" }
 
 tokio = { version = "1.14", default-features = false, features = ["rt-multi-thread"] }
 num_cpus = "1.0"
@@ -47,7 +47,7 @@ serde = {version = "1.0", features = [ "rc", "derive" ]}
 mimalloc = "0.1.29"
 
 [dependencies.tui]
-git = "https://github.com/fdehau/tui-rs.git"
+git = "https://github.com/ceohobo1986/tui-rs.git"
 branch="paragraph-scroll"
 default-features = false
 features = ['crossterm']

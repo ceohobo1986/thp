@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2019 Artem Polishchuk <ego.cordatus@gmail.com> -->
 <component type="desktop-application">
-  <id>net.veloren.veloren.desktop</id>
+  <id>net.thp.hobaniaproject.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
-  <name>Veloren</name>
+  <name>The Hobania Project</name>
   <provides>
-    <binary>veloren-voxygen</binary>
+    <binary>thp-voxygen</binary>
   </provides>
 
   <content_rating type="oars-1.0">
@@ -18,27 +18,27 @@
   </content_rating>
 
   <summary>
-    Veloren is a multiplayer voxel RPG written in Rust. It is inspired by games
+    The Hobania Project is a multiplayer voxel RPG written in Rust. It is inspired by games
     such as Cube World, Legend of Zelda: Breath of the Wild, Dwarf Fortress and
     Minecraft.
   </summary>
   <summary xml:lang="de">
-    Veloren ist ein in Rust geschriebenes Mehrspieler Voxel RPG. Es wurde von
+    The Hobania Project ist ein in Rust geschriebenes Mehrspieler Voxel RPG. Es wurde von
     Spielen wie Cube World, The Legend of Zelda: Breath of the Wild, Dwarf
     Fortress und Minecraft inspiriert.
   </summary>
 
   <description>
     <p>
-      Welcome To Veloren!
+      Welcome To The Hobania Project!
     </p><p xml:lang="de">
-        Willkommen bei Veloren!
+        Willkommen bei The Hobania Project!
     </p><p>
-      Veloren is a multiplayer voxel RPG written in Rust. Veloren takes
+      The Hobania Project is a multiplayer voxel RPG written in Rust. Veloren takes
       inspiration from games such as Cube World, Minecraft and Dwarf Fortress.
       The game is currently under heavy development, but is playable.
     </p><p xml:lang="de">
-        Veloren ist ein in Rust geschriebenes Mehrspieler Voxel RPG. Es wurde
+        The Hobania Project ist ein in Rust geschriebenes Mehrspieler Voxel RPG. Es wurde
         von Spielen wie Cube World, Minecraft und Dwarf Fortress inspiriert.
         Das Spiel befindet sich mommentan noch in Entwicklung, ist aber bereits
         spielbar.
@@ -48,13 +48,13 @@
       Entwicklung
     </p><p>
       Currently the communication of contributors happens mainly on our official
-      Discord server (https://discord.gg/kjwJwjK). You can join it to keep up
+      Discord server (https://CHANGE!). You can join it to keep up
       with the development, talk to us or contribute something yourself. Anyone
       who shows genuine effort to help is welcome in our team. You don't have to
       know how to program to contribute!
     </p><p xml:lang="de">
       Aktuell findet die Kommunikation zwischen Beitragenden hauptsächlich auf
-      unserem offiziellen Discord (https://discord.gg/kjwJwjK) Server statt.
+      unserem offiziellen Discord (https://CHANGE!) Server statt.
       Du kannst beitreten um Neuigkeiten über die Entwicklung zu erhalten, mit
       uns zu reden oder selbst etwas beizutragen. Jeder, der sich bemüht zu helfen
       ist in unserem Team willkommen. Du musst nicht wissen wie man programmiert,
@@ -93,8 +93,8 @@
     <keyword>world</keyword>
   </keywords>
 
-  <url type="bugtracker">https://gitlab.com/veloren/veloren/issues</url>
-  <url type="faq">https://gitlab.com/veloren/veloren#faq</url>
-  <url type="help">https://book.veloren.net/</url>
-  <url type="homepage">https://veloren.net</url>
+  <url type="bugtracker">https://gitlab.com/HobaniaProject/thp/-/issues</url>
+  <url type="faq">https://gitlab.com/HobaniaProject/thp#faq</url>
+  <url type="help">https://hobania.mitmotion.co.za/book/</url>
+  <url type="homepage">https://hobania.mitmotion.co.za</url>
 </component>

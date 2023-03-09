@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=The Hobania Project
+Comment=HobaniaProject is a multiplayer voxel RPG written in Rust
+Comment[de]=HobaniaProject ist ein in Rust geschriebenes Mehrspieler Voxel RPG
+Exec=thp-voxygen
+Categories=Game;Simulation;
+Keywords=thp;sandbox;world;blocks;nodes;multiplayer;roleplaying;
+Icon=net.thp.hobaniaproject
+Terminal=false

@@ -1681,7 +1681,7 @@ impl Client {
         add_foreign_systems: impl Fn(&mut DispatcherBuilder),
     ) -> Result<Vec<Event>, Error> {
         span!(_guard, "tick", "Client::tick");
-        // This tick function is the centre of the Veloren universe. Most client-side
+        // This tick function is the centre of the Hobania universe. Most client-side
         // things are managed from here, and as such it's important that it
         // stays organised. Please consult the core developers before making
         // significant changes to this code. Here is the approximate order of
@@ -2825,7 +2825,7 @@ mod tests {
     /// THIS TEST VERIFIES THE CONSTANT API.
     /// CHANGING IT WILL BREAK 3rd PARTY APPLICATIONS (please extend) which
     /// needs to be informed (or fixed)
-    ///  - torvus: https://gitlab.com/veloren/torvus
+    ///  - torvus: https://gitlab.com/thp/torvus
     /// CONTACT @Core Developer BEFORE MERGING CHANGES TO THIS TEST
     fn constant_api_test() {
         use common::clock::Clock;
@@ -2837,8 +2837,8 @@ mod tests {
         let runtime2 = Arc::clone(&runtime);
         let username = "Foo";
         let password = "Bar";
-        let auth_server = "auth.veloren.net";
-        let veloren_client: Result<Client, Error> = runtime.block_on(Client::new(
+        let auth_server = "thp.mitmotion.co.za";
+        let thp_client: Result<Client, Error> = runtime.block_on(Client::new(
             ConnectionArgs::Tcp {
                 hostname: "127.0.0.1:9000".to_owned(),
                 prefer_ipv6: false,
@@ -2851,7 +2851,7 @@ mod tests {
         ));
         let localisation = LocalizationHandle::load_expect("en");
 
-        let _ = veloren_client.map(|mut client| {
+        let _ = thp_client.map(|mut client| {
             //clock
             let mut clock = Clock::new(Duration::from_secs_f64(SPT));
 

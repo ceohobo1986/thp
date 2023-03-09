@@ -1,8 +1,8 @@
 [package]
-authors = ["juliancoffee <lightdarkdaughter@gmail.com>", "Marcel Märtens <marcel.cochem@googlemail.com>"]
+authors = ["Hobonatius Von Street <ceo_hobo@mitmotion.co.za>"]
 edition = "2021"
-name = "veloren-common-assets"
-description = "Crate for game loading assets for veloren."
+name = "thp-common-assets"
+description = "Crate for game loading assets for hobania."
 version = "0.10.0"
 
 [dependencies]

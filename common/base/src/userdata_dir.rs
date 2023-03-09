@@ -15,7 +15,7 @@ const VELOREN_USERDATA_ENV: &str = "VELOREN_USERDATA";
 /// "executable" => <executable dir>/userdata
 /// Note: case insensitive
 
-/// Determines common user data directory used by veloren frontends
+/// Determines common user data directory used by thp frontends
 /// The first specified in this list is used
 /// 1. The VELOREN_USERDATA environment variable
 /// 2. The VELOREN_USERDATA_STRATEGY environment variable
@@ -28,7 +28,7 @@ pub fn userdata_dir(workspace: bool, strategy: Option<&str>, manifest_dir: &str)
         // 2. The VELOREN_USERDATA_STRATEGY environment variable
         .or_else(|| match strategy {
             // "system" => system specific project data directory
-            Some(s) if s.eq_ignore_ascii_case("system") => Some(directories_next::ProjectDirs::from("net", "veloren", "veloren")
+            Some(s) if s.eq_ignore_ascii_case("system") => Some(directories_next::ProjectDirs::from("net", "thp", "hobaniaproject")
                 .expect("System's $HOME directory path not found!")
                 .data_dir()
                 .join("userdata")

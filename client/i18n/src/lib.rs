@@ -196,7 +196,7 @@ impl assets::Compound for Language {
 
         // NOTE:
         // Basically a hack, but conrod can't use isolation marks yet.
-        // Veloren Issue 1649
+        // Hobania Issue 1649
         bundle.set_use_isolating(false);
 
         Ok(Self {
@@ -207,7 +207,7 @@ impl assets::Compound for Language {
     }
 }
 
-/// The central data structure to handle localization in Veloren
+/// The central data structure to handle localization in Hobania
 // inherit Copy + Clone from AssetHandle (what?)
 #[derive(Copy, Clone)]
 pub struct LocalizationHandle {
@@ -218,7 +218,7 @@ pub struct LocalizationHandle {
 }
 
 /// Read [LocalizationGuard]
-// arbitrary choice to minimize changing all of veloren
+// arbitrary choice to minimize changing all of thp
 pub type Localization = LocalizationGuard;
 
 /// RAII guard returned from [LocalizationHandle::read()], resembles

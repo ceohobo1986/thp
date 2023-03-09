@@ -40,10 +40,10 @@ impl Tui {
     }
 
     pub fn process_command(cmd: &str, command_s: &mut async_channel::Sender<Cmd>) -> bool {
-        let matches = Command::new("veloren-botclient")
+        let matches = Command::new("hobania-botclient")
             .version(common::util::DISPLAY_VERSION_LONG.as_str())
-            .author("The veloren devs <https://gitlab.com/veloren/veloren>")
-            .about("The veloren bot client allows logging in as a horde of bots for load-testing")
+            .author("The hobania devs <https://gitlab.com/HobaniaProject/thp.git>")
+            .about("The hobania bot client allows logging in as a horde of bots for load-testing")
             .no_binary_name(true)
             .subcommand(
                 Command::new("register")

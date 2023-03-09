@@ -1,13 +1,13 @@
 use clap::{Arg, Command};
 use common_assets::find_root;
-use veloren_client_i18n::{
+use thp_client_i18n::{
     analysis::{Language, ReferenceLanguage},
     REFERENCE_LANG,
 };
 
 fn main() {
     let args = Command::new("i18n-check")
-        .about("Tool to check your Veloren localisation for correctness and missing keys")
+        .about("Tool to check your Hobania localisation for correctness and missing keys")
         .arg(
             Arg::new("CODE")
                 .required(true)

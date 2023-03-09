@@ -11,7 +11,7 @@ use std::{
 };
 use tokio::runtime::Runtime;
 use tracing::{error, info};
-use veloren_client::{addr::ConnectionArgs, Client, Event};
+use thp_client::{addr::ConnectionArgs, Client, Event};
 use voxygen_i18n_helpers::localize_chat_message;
 
 const TPS: u64 = 10; // Low value is okay, just reading messages.
@@ -63,7 +63,7 @@ fn main() {
             &mut None,
             &username,
             &password,
-            |provider| provider == "https://auth.veloren.net",
+            |provider| provider == "https://hobania.mitmotion.co.za/auth",
         ))
         .expect("Failed to create client instance");
 

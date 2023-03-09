@@ -1,6 +1,6 @@
 use common_assets::find_root;
 use std::{fs, io::Write, path::Path};
-use veloren_client_i18n::{
+use thp_client_i18n::{
     analysis::{Language, ReferenceLanguage},
     list_localizations, REFERENCE_LANG,
 };

@@ -1,7 +1,7 @@
 [package]
-authors = ["Marcel Märtens <marcel.cochem@googlemail.com>"]
+authors = ["Hobonatius Von Street <ceo_hobo@mitmotion.co.za>"]
 edition = "2021"
-name = "veloren-common-base"
+name = "thp-common-base"
 description = "minimal dependency for crates to now depend on whole common"
 version = "0.10.0"
 
