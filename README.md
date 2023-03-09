@@ -2,7 +2,7 @@
 	<img alt="The Hobania Project logo on a screenshot" src="/assets/voxygen/background000.png">
 </p>
 
-[![pipeline status](https://gitlab.com/HobaniaProject/thp/badges/master/pipeline.svg)](https://gitlab.com/HobaniaProject/thp/-/commits/main)
+[![pipeline status](https://gitlab.com/HobaniaProject/thp/assets/custom_badges/000.svg)](https://gitlab.com/HobaniaProject/thp/-/commits/main)
 [![coverage report](https://gitlab.com/HobaniaProject/thp/badges/master/coverage.svg)](https://gitlab.com/HobaniaProject/thp/-/commits/main)
 
 
