@@ -20,7 +20,7 @@ use std::{
     time::{SystemTime, UNIX_EPOCH},
 };
 use vek::*;
-use veloren_world::{
+use thp_world::{
     sim::{FileOpts, WorldOpts, DEFAULT_WORLD_MAP},
     World,
 };
@@ -245,7 +245,7 @@ fn palette(conn: Connection) -> Result<(), Box<dyn Error>> {
 fn main() -> Result<(), Box<dyn Error>> {
     let mut app = Command::new("world_block_statistics")
         .version(common::util::DISPLAY_VERSION_LONG.as_str())
-        .author("The veloren devs <https://gitlab.com/veloren/veloren>")
+        .author("The Hobania project devs <https://gitlab.com/HobaniaProject/thp>")
         .about("Compute and process block statistics on generated chunks")
         .subcommand(
             Command::new("generate")

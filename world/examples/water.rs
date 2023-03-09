@@ -14,7 +14,7 @@ use tracing_subscriber::{
     FmtSubscriber,
 };
 use vek::*;
-use veloren_world::{
+use thp_world::{
     sim::{self, get_horizon_map, sample_pos, sample_wpos, WorldOpts},
     util::Sampler,
     ColumnSample, World, CONFIG,

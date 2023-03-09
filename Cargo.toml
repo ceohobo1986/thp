@@ -41,7 +41,7 @@ incremental = true
 [profile.dev.package."*"]
 # TODO: seems like opt-level=2 should be sufficient here....
 opt-level = 3
-[profile.dev.package."veloren-network-protocol"]
+[profile.dev.package."thp-network-protocol"]
 opt-level = 3
 
 
@@ -58,9 +58,9 @@ inherits= 'dev'
 overflow-checks = false
 debug-assertions = false
 
-[profile.no_overflow.package."veloren-world"]
+[profile.no_overflow.package."thp-world"]
 opt-level = 3
-[profile.no_overflow.package."veloren-voxygen-anim"]
+[profile.no_overflow.package."thp-voxygen-anim"]
 opt-level = 3
 
 # this profile is for profiling with using the no_overflow profile, since release can take signifcant times to build.
@@ -68,7 +68,7 @@ opt-level = 3
 inherits = 'no_overflow'
 debug = 1
 
-# this profile is used for veloren releases, compile time doesn't matter
+# this profile is used for thp releases, compile time doesn't matter
 # we need stacktraces, light debug information, as much checks as possible
 # I would like to put it in a seperate `official_release` target, but that doesnt share caches with `cargo test` and `cargo bench`
 [profile.release]
@@ -79,23 +79,23 @@ lto = true
 debug = false
 panic = "abort" # don't need unwinding so we can skip including the landing pads for that
 # line tables so we can have useful backtraces for in-house crates
-[profile.release.package."veloren-network"]
+[profile.release.package."thp-network"]
 debug = 1
-[profile.release.package."veloren-network-protocol"]
+[profile.release.package."thp-network-protocol"]
 debug = 1
-[profile.release.package."veloren-common"]
+[profile.release.package."thp-common"]
 debug = 1
-[profile.release.package."veloren-common-systems"]
+[profile.release.package."thp-common-systems"]
 debug = 1
-[profile.release.package."veloren-client"]
+[profile.release.package."thp-client"]
 debug = 1
-[profile.release.package."veloren-server"]
+[profile.release.package."thp-server"]
 debug = 1
-[profile.release.package."veloren-server-cli"]
+[profile.release.package."thp-server-cli"]
 debug = 1
-[profile.release.package."veloren-voxygen"]
+[profile.release.package."thp-voxygen"]
 debug = 1
-[profile.release.package."veloren-world"]
+[profile.release.package."thp-world"]
 debug = 1
 
 # used for cargo bench
@@ -112,8 +112,8 @@ debug = 1
 systems = ["x86_64-linux"]
 
 [workspace.metadata.nix.cachix]
-name = "veloren-nix"
-key = "veloren-nix.cachix.org-1:zokfKJqVsNV6kI/oJdLF6TYBdNPYGSb+diMVQPn/5Rc="
+name = "thp-nix"
+key = "thp-nix.cachix.org-1:zokfKJqVsNV6kI/oJdLF6TYBdNPYGSb+diMVQPn/5Rc="
 
 [patch.crates-io]
 vek = { git = "https://github.com/yoanlcq/vek.git", rev = "84d5cb65841d46599a986c5477341bea4456be26" }

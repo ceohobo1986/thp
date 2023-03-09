@@ -5,7 +5,7 @@ use image::{
 use rayon::ThreadPoolBuilder;
 use std::{fs::File, io::Write};
 use vek::*;
-use veloren_world::{
+use thp_world::{
     sim::{FileOpts, WorldOpts, DEFAULT_WORLD_MAP},
     Land, World,
 };

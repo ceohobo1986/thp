@@ -1,6 +1,6 @@
 use std::ops::{Add, Mul, Sub};
 use vek::*;
-use veloren_world::{sim::WorldOpts, util::Sampler, World};
+use thp_world::{sim::WorldOpts, util::Sampler, World};
 
 const W: usize = 640;
 const H: usize = 480;

@@ -26,7 +26,7 @@ use std::{
 };
 use tracing::{debug, trace};
 use vek::*;
-use veloren_world::{
+use thp_world::{
     civ::SiteKind,
     sim::{FileOpts, WorldOpts, DEFAULT_WORLD_MAP},
     World,

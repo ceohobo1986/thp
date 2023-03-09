@@ -5,7 +5,7 @@ use common::{
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use std::sync::Arc;
 use vek::*;
-use veloren_voxygen::{mesh::terrain::generate_mesh, scene::terrain::BlocksOfInterest};
+use thp_voxygen::{mesh::terrain::generate_mesh, scene::terrain::BlocksOfInterest};
 use world::{sim, World};
 
 const CENTER: Vec2<i32> = Vec2 { x: 512, y: 512 };

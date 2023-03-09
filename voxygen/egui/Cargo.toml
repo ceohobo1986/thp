@@ -1,6 +1,6 @@
 [package]
 authors = ["Ben Wallis <atomyc@gmail.com>"]
-name = "veloren-voxygen-egui"
+name = "thp-voxygen-egui"
 edition = "2021"
 version = "0.9.0"
 
@@ -9,11 +9,11 @@ use-dyn-lib = ["common-dynlib"]
 be-dyn-lib = []
 
 [dependencies]
-client = {package = "veloren-client", path = "../../client"}
-common = {package = "veloren-common", path = "../../common"}
+client = {package = "thp-client", path = "../../client"}
+common = {package = "thp-common", path = "../../common"}
 egui = "0.12"
 egui_winit_platform = "0.8"
 lazy_static = "1.4.0"
-common-dynlib = {package = "veloren-common-dynlib", path = "../../common/dynlib", optional = true}
+common-dynlib = {package = "thp-common-dynlib", path = "../../common/dynlib", optional = true}
 
 

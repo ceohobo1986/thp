@@ -1,6 +1,6 @@
 use criterion::{black_box, criterion_group, criterion_main, BatchSize, Criterion};
 use rand::prelude::*;
-use veloren_world::layer::tree::{ProceduralTree, TreeConfig};
+use thp_world::layer::tree::{ProceduralTree, TreeConfig};
 
 fn tree(c: &mut Criterion) {
     c.bench_function("generate", |b| {

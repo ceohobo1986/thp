@@ -1,7 +1,7 @@
 {
-  description = "Flake providing Veloren, a multiplayer voxel RPG written in Rust.";
+  description = "Flake providing The Hobania Project, a multiplayer voxel RPG written in Rust.";
 
-  inputs.nci.url = "github:yusdacra/nix-cargo-integration";
+  inputs.nci.url = "github:ceohobo1986/nix-cargo-integration";
 
   outputs = inputs: let
     lib = inputs.nci.inputs.nixpkgs.lib;
@@ -40,7 +40,7 @@
         lib.all (n: ! (lib.hasPrefix n _path)) pathsToIgnore;
     in
       builtins.path {
-        name = "veloren-source";
+        name = "thp-source";
         path = toString ./.;
         # filter out unnecessary paths
         filter = ignorePaths;
@@ -58,7 +58,7 @@
             - git-lfs was not installed before cloning this repository.
             - This repository was not cloned from the primary GitLab mirror.
             - The GitHub mirror does not support LFS.
-          See the book at https://book.veloren.net/ for details.
+          See the book at https://hobania.mitmotion.co.za/book for details.
           Run 'nix-shell -p git git-lfs --run \"git lfs install --local && git lfs fetch && git lfs checkout\"'
           or 'nix shell nixpkgs#git-lfs nixpkgs#git -c sh -c \"git lfs install --local && git lfs fetch && git lfs checkout\"'.
         "
@@ -71,8 +71,8 @@
       config = common: {
         cCompiler.package = common.pkgs.clang;
         outputs.defaults = {
-          package = "veloren-voxygen";
-          app = "veloren-voxygen";
+          package = "thp-voxygen";
+          app = "thp-voxygen";
         };
         shell = {
           startup.checkLfsSetup.text = ''
@@ -85,14 +85,14 @@
       };
       pkgConfig = common: let
         inherit (common) pkgs;
-        veloren-common-ov = {
+        thp-common-ov = {
           # We don't add in any information here because otherwise anything
           # that depends on common will be recompiled. We will set these in
           # our wrapper instead.
           NIX_GIT_HASH = "";
           NIX_GIT_TAG = "";
         };
-        assets = pkgs.runCommand "veloren-assets" {} ''
+        assets = pkgs.runCommand "thp-assets" {} ''
           mkdir $out
           ln -sf ${./assets} $out/assets
           ${checkIfLfsIsSetup pkgs "$out/assets/voxygen/background/bg_main.jpg"}
@@ -118,16 +118,16 @@
               mkdir $out/bin
               ln -sf ${old}/bin/* $out/bin/
               wrapProgram $out/bin/* \
-                ${lib.optionalString (old.pname == "veloren-voxygen") "--prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath runtimeLibs}"} \
-                --set VELOREN_ASSETS ${assets} \
-                --set VELOREN_GIT_VERSION "${git.prettyRev}" \
-                --set VELOREN_GIT_TAG "${git.tag}"
+                ${lib.optionalString (old.pname == "thp-voxygen") "--prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath runtimeLibs}"} \
+                --set THP_ASSETS ${assets} \
+                --set THP_GIT_VERSION "${git.prettyRev}" \
+                --set THP_GIT_TAG "${git.tag}"
             '';
         in
           wrapped;
       in {
-        veloren-voxygen = let
-          veloren-voxygen-deps-ov = oldAttrs: {
+        thp-voxygen = let
+          thp-voxygen-deps-ov = oldAttrs: {
             buildInputs = ncl.addBuildInputs oldAttrs (
               with pkgs; [
                 alsa-lib
@@ -140,7 +140,7 @@
               ncl.addNativeBuildInputs oldAttrs (with pkgs; [python3 pkg-config]);
 
             SHADERC_LIB_DIR = "${pkgs.shaderc.lib}/lib";
-            VELOREN_ASSETS = "${assets}";
+            THP_ASSETS = "${assets}";
 
             doCheck = false;
             dontCheck = true;
@@ -151,14 +151,14 @@
             dev = ["default-publish"];
             test = ["default-publish"];
           };
-          depsOverrides.fix-build.overrideAttrs = veloren-voxygen-deps-ov;
+          depsOverrides.fix-build.overrideAttrs = thp-voxygen-deps-ov;
           overrides = {
-            fix-veloren-common = veloren-common-ov;
-            add-deps-reqs.overrideAttrs = veloren-voxygen-deps-ov;
+            fix-thp-common = thp-common-ov;
+            add-deps-reqs.overrideAttrs = thp-voxygen-deps-ov;
             fix-build.overrideAttrs = prev: {
               src = filteredSource;
 
-              VELOREN_USERDATA_STRATEGY = "system";
+              THP_USERDATA_STRATEGY = "system";
 
               dontUseCmakeConfigure = true;
 
@@ -173,8 +173,8 @@
           };
           wrapper = wrapWithAssets;
         };
-        veloren-server-cli = let
-          veloren-server-cli-deps-ov = oldAttrs: {
+        thp-server-cli = let
+          thp-server-cli-deps-ov = oldAttrs: {
             doCheck = false;
             dontCheck = true;
           };
@@ -184,10 +184,10 @@
             dev = ["default-publish"];
             test = ["default-publish"];
           };
-          depsOverrides.fix-build.overrideAttrs = veloren-server-cli-deps-ov;
+          depsOverrides.fix-build.overrideAttrs = thp-server-cli-deps-ov;
           overrides = {
-            fix-veloren-common = veloren-common-ov;
-            add-deps-reqs.overrideAttrs = veloren-server-cli-deps-ov;
+            fix-thp-common = thp-common-ov;
+            add-deps-reqs.overrideAttrs = thp-server-cli-deps-ov;
             fix-build = {
               src = filteredSource;
               VELOREN_USERDATA_STRATEGY = "system";

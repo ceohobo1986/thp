@@ -11,7 +11,7 @@ use common::{
 };
 use rayon::ThreadPoolBuilder;
 use vek::{Vec2, Vec3};
-use veloren_world::{
+use thp_world::{
     sim::{FileOpts, WorldOpts, DEFAULT_WORLD_MAP},
     site2::{plot::PlotKind, Fill, Structure},
     CanvasInfo, Land, World,
@@ -40,7 +40,7 @@ fn main() -> Result {
     let mut volume = ExportVol::new();
     let wpos = volume.size_xy().map(|p| p as i32 / 2);
     let site =
-        veloren_world::site2::Site::generate_dungeon(&Land::empty(), &mut rand::thread_rng(), wpos);
+        thp_world::site2::Site::generate_dungeon(&Land::empty(), &mut rand::thread_rng(), wpos);
     CanvasInfo::with_mock_canvas_info(index.as_index_ref(), world.sim(), |canvas| {
         for plot in site.plots() {
             if let PlotKind::Dungeon(dungeon) = plot.kind() {

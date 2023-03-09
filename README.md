@@ -48,7 +48,7 @@ Due to rapid development stable versions become outdated fast and might be **inc
 
 ### **Q:** Do you accept donations?
 
-**A:** You can support the project on our [OpenCollective Page](https://opencollective.com/veloren).
+**A:** You can support the project on our [OpenCollective Page](https://opencollective.com/mitmotion).
 
 ## Credit
 
