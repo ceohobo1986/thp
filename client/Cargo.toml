@@ -31,7 +31,7 @@ rayon = "1.5"
 specs = { version = "0.18", features = ["serde", "storage-event-control", "derive"] }
 vek = { version = "0.15.8", features = ["serde"] }
 hashbrown = { version = "0.12", features = ["rayon", "serde", "nightly"] }
-authc = { git = "https://gitlab.com/HobaniaProject/thp.git", rev = "main" }
+authc = { git = "https://github.com/ceohobo1986/thp.git", rev = "main" }
 
 #fb3dcbc4962b367253f8f2f92760ef44d2679c9a
 
