@@ -1,5 +1,5 @@
 <p align="center">
-	<img alt="The Hobania Project logo on a screenshot" src="https://gitlab.com/HobaniaProject/thp/-/blob/bbd2e553d5d3d7a4a9b7f328013af25dede46cf1/assets/voxygen/background000.png">
+	<img alt="The Hobania Project logo on a screenshot" src="/assets/voxygen/background000.png">
 </p>
 
 [![pipeline status](https://gitlab.com/HobaniaProject/thp/badges/master/pipeline.svg)](https://gitlab.com/HobaniaProject/thp/-/commits/main)
