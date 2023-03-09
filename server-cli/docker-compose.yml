@@ -2,10 +2,10 @@ version: "3.5"
 
 services:
   game-server:
-    image: registry.gitlab.com/veloren/veloren/server-cli:weekly
+    image: registry.gitlab.com/HobaniaProject/thp/server-cli:weekly
     stdin_open: true
     tty: true
-    container_name: veloren-game-server-master
+    container_name: thp-game-server-master
     ports:
       - "14004:14004"
       - "14005:14005"
@@ -18,5 +18,5 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30 --stop-timeout 130s --cleanup veloren-game-server-master
+    command: --interval 30 --stop-timeout 130s --cleanup thp-game-server-master
     restart: on-failure:0

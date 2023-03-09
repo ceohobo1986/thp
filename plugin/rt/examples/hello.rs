@@ -1,4 +1,4 @@
-use veloren_plugin_rt::{
+use thp_plugin_rt::{
     api::{event::*, Action, GameMode},
     *,
 };

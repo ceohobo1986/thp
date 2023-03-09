@@ -331,12 +331,12 @@ impl TickMetrics {
             "entity_count",
             "number of all entities currently active on the server",
         ))?;
-        let opts = Opts::new("veloren_build_info", "Build information")
+        let opts = Opts::new("thp_build_info", "Build information")
             .const_label("hash", *common::util::GIT_HASH)
             .const_label("version", "");
         let build_info = IntGauge::with_opts(opts)?;
         let start_time = IntGauge::with_opts(Opts::new(
-            "veloren_start_time",
+            "thp_start_time",
             "start time of the server in seconds since EPOCH",
         ))?;
         let time_of_day =

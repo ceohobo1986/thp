@@ -571,7 +571,7 @@ impl Server {
             disconnect_all_clients_requested: false,
         };
 
-        debug!(?settings, "created veloren server with");
+        debug!(?settings, "created thp server with");
 
         let git_hash = *common::util::GIT_HASH;
         let git_date = common::util::GIT_DATE.clone();

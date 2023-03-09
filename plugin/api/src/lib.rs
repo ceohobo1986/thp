@@ -18,7 +18,7 @@ pub use event::*;
 ///
 /// # Usage:
 /// ```rust
-/// # use veloren_plugin_api::*;
+/// # use thp_plugin_api::*;
 /// # pub fn emit_action(action: Action) { emit_actions(vec![action]) }
 /// # pub fn emit_actions(_actions: Vec<Action>) {}
 /// // Packing actions is better than sending multiple ones at the same time!
@@ -41,7 +41,7 @@ pub enum Action {
 /// This enum shouldn't be used by itself. You should always prefer `get`
 /// methods on Plugin API Types For instance, prefer this method:
 /// ```rust
-/// # use veloren_plugin_api::*;
+/// # use thp_plugin_api::*;
 /// # let entityid = Player {id: Uid(0)};
 /// # trait G { fn get_entity_health(&self) -> Option<i64>; }
 /// # impl G for Player {fn get_entity_health(&self) -> Option<i64> {Some(1)}}
@@ -52,7 +52,7 @@ pub enum Action {
 /// ```rust
 /// # use common::comp::Body;
 /// # use common::comp::body::humanoid;
-/// # use veloren_plugin_api::*;
+/// # use thp_plugin_api::*;
 /// # let entityid = Uid(0);
 /// # fn retrieve_action(r: &Retrieve) -> Result<RetrieveResult, RetrieveError> { Ok(RetrieveResult::GetEntityHealth(Health::new(Body::Humanoid(humanoid::Body::random()), 1))) }
 /// let life = if let RetrieveResult::GetEntityHealth(e) =
@@ -79,7 +79,7 @@ pub enum Retrieve {
 /// ```rust
 /// # use common::comp::Body;
 /// # use common::comp::body::humanoid;
-/// # use veloren_plugin_api::*;
+/// # use thp_plugin_api::*;
 /// # let entityid = Uid(0);
 /// # fn retrieve_action(r: &Retrieve) -> Result<RetrieveResult, RetrieveError> { Ok(RetrieveResult::GetEntityHealth(Health::new(Body::Humanoid(humanoid::Body::random()), 1)))}
 /// let life = if let RetrieveResult::GetEntityHealth(e) =

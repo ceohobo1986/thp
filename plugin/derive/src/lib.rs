@@ -32,29 +32,29 @@ pub fn event_handler(_args: TokenStream, item: TokenStream) -> TokenStream {
         quote! {
             #[no_mangle]
             pub fn #fn_name(intern__ptr: i64, intern__len: i64) -> i64 {
-                let input = ::veloren_plugin_rt::read_input(intern__ptr as _,intern__len as _).unwrap();
+                let input = ::thp_plugin_rt::read_input(intern__ptr as _,intern__len as _).unwrap();
                 #[inline]
                 fn inner(#fn_args) #fn_return {
                     #fn_body
                 }
                 // Artificially force the event handler to be type-correct
-                fn force_event<E: ::veloren_plugin_rt::api::Event>(event: E, inner: fn(E) -> E::Response) -> E::Response {
+                fn force_event<E: ::thp_plugin_rt::api::Event>(event: E, inner: fn(E) -> E::Response) -> E::Response {
                     inner(event)
                 }
-                ::veloren_plugin_rt::write_output(&force_event(input, inner))
+                ::thp_plugin_rt::write_output(&force_event(input, inner))
             }
         }
     } else {
         quote! {
             #[no_mangle]
             pub fn #fn_name(intern__ptr: i64, intern__len: i64) -> i64 {
-                let input = ::veloren_plugin_rt::read_input(intern__ptr as _,intern__len as _).unwrap();
+                let input = ::thp_plugin_rt::read_input(intern__ptr as _,intern__len as _).unwrap();
                 #[inline]
                 fn inner(#fn_args) #fn_return {
                     #fn_body
                 }
                 // Artificially force the event handler to be type-correct
-                fn force_event<E: ::veloren_plugin_rt::api::Event>(event: E, inner: fn(E, &mut PLUGIN_STATE_TYPE) -> E::Response) -> E::Response {
+                fn force_event<E: ::thp_plugin_rt::api::Event>(event: E, inner: fn(E, &mut PLUGIN_STATE_TYPE) -> E::Response) -> E::Response {
                     //let mut plugin_state = PLUGIN_STATE.lock().unwrap();
 
                         assert_eq!(PLUGIN_STATE_GUARD.swap(true, std::sync::atomic::Ordering::Acquire), false);
@@ -68,7 +68,7 @@ pub fn event_handler(_args: TokenStream, item: TokenStream) -> TokenStream {
                         out
 
                 }
-                ::veloren_plugin_rt::write_output(&force_event(input, inner))
+                ::thp_plugin_rt::write_output(&force_event(input, inner))
             }
         }
     };
